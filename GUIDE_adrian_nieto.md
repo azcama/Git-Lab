@@ -81,7 +81,7 @@ git commit -m "First commit"
 
 This will commit with *"First commit"* as a message, with the email and username configured in git as author, and a unique commit ID.
 
-> [!TIP] Keep messages clear
+> [!TIP]
 > Commit messages should be clear and helpful to help others while searching through the commits
 
 ---
@@ -94,7 +94,7 @@ But if we check GitHub, there is no changes made, that is because these changes 
 git push
 ```
 
-> [!CAUTION] If an error raise
+> [!CAUTION]
 > In case of it being a new branch not existing in the cloud, we should use the following:
 
 ```bash
@@ -103,7 +103,7 @@ git push --set-upstream origin feature/adrian-nieto
 
 This will create the new branch in the remote repository named **feature/adrian-nieto**.
 
-> [!NOTE] Happy news!
+> [!NOTE]
 > It's not neccesary to remember it, as git itself will warn us and tell us the command that should be given.
 
 ---
