@@ -1,0 +1,37 @@
+services:
+  # Main proxy server
+  web_server:
+    build: .
+    container_name: web_server
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - backend_net
+    depends_on:
+      - app1
+      - app2
+
+  # App 1
+  app1:
+    image: nginx:alpine
+    container_name: app1_container
+    volumes:
+      - ./app1:/usr/share/nginx/html
+    networks:
+      - backend_net
+
+  # App 2
+  app2:
+    image: nginx:alpine
+    container_name: app2_container
+    volumes:
+      - ./app2:/usr/share/nginx/html
+    networks:
+      - backend_net
+
+networks:
+  backend_net:
+    driver: bridge
